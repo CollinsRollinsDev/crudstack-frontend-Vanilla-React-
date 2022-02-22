@@ -7,6 +7,9 @@ import Login from './Pages/Login';
 import Register from './Pages/Register';
 import ChangePassword from './Pages/ChangePassword';
 import Cookies from "js-cookie";
+import axios from 'axios';
+
+axios.defaults.withCredentials = true;
 
 function App() {
 
@@ -37,7 +40,6 @@ function App() {
 
   return (
     <>
-    <div>Hello man</div>
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Homepage />} />
