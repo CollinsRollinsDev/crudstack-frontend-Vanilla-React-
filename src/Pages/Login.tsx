@@ -91,10 +91,27 @@ const Login = () => {
     //    credentials:'include'
     //  })
       // const data = await res.json();
-      const res:any = await axios.post(`https://crud-stack-server-side.vercel.app/login?queryP=${queryP}`, {  emailAddress:email.toLocaleLowerCase(),
-      password}, {
-        withCredentials:true,
-        // credentials:'include'
+      const options = {
+        method: 'POST',
+        url: `https://crud-stack-server-side.vercel.app/login?queryP=${queryP}`,
+        // xsrfCookieName: 'XSRF-TOKEN',
+        // xsrfHeaderName: 'X-XSRF-TOKEN',
+        data:{  emailAddress:email.toLocaleLowerCase(),
+          password},
+          withCredentials:true,
+      };
+      // const res:any = await axios(`https://crud-stack-server-side.vercel.app/login?queryP=${queryP}`, {  emailAddress:email.toLocaleLowerCase(),
+      // password}, {
+      //   withCredentials:true,
+      // })
+      const res:any = await axios({
+        method: 'POST',
+        url: `https://crud-stack-server-side.vercel.app/login?queryP=${queryP}`,
+        // xsrfCookieName: 'XSRF-TOKEN',
+        // xsrfHeaderName: 'X-XSRF-TOKEN',
+        data:{  emailAddress:email.toLocaleLowerCase(),
+          password},
+          withCredentials:true,
       })
       const {data} = await res;
       if (data.success !== true) {
