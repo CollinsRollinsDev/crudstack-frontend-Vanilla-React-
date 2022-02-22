@@ -44,8 +44,10 @@ const Header = ({ currentPage }: Incoming) => {
 
   const lightIcon = (
     <svg
+    onClick={cookieDecode}
       // onClick={handleToggle}
-      fill="#4e00ad"
+      fill="#ffffff"
+      // fill="#4e00ad"
       xmlns="http://www.w3.org/2000/svg"
       width="18"
       height="18"
