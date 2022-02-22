@@ -10,13 +10,14 @@ import ChangePassword from './Pages/ChangePassword';
 function App() {
   return (
     <>
+    <div>Hello man</div>
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Homepage />} />
+        {/* <Route path='/' element={<Homepage />} />
         <Route path='/update' element={<Update />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
-        <Route path='/changepassword' element={<ChangePassword />} />
+        <Route path='/changepassword' element={<ChangePassword />} /> */}
       </Routes>
     </BrowserRouter>
     </>
