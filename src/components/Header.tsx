@@ -34,7 +34,7 @@ const Header = ({ currentPage }: Incoming) => {
   };
 
   useLayoutEffect(() => {
-    // cookieDecode();
+    cookieDecode();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
