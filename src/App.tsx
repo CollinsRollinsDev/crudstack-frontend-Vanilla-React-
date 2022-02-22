@@ -29,7 +29,7 @@ function App() {
   }
 
   useEffect(() => {
-    // getLoggedIn();
+    getLoggedIn();
   },[])
 
   return (
