@@ -79,7 +79,7 @@ const Login = () => {
 
     try {
       setBtn("please wait....");
-    //  const res = await fetch(`http://localhost:8088/login?queryP=${queryP}`, {
+    //  const res = await fetch(`https://crud-stack-server-side.vercel.app/login?queryP=${queryP}`, {
     //    method:"post",
     //    body:JSON.stringify({
     //      emailAddress:email.toLocaleLowerCase(),
@@ -91,7 +91,7 @@ const Login = () => {
     //    credentials:'include'
     //  })
       // const data = await res.json();
-      const res:any = await axios.post(`http://localhost:8088/login?queryP=${queryP}`, {  emailAddress:email.toLocaleLowerCase(),
+      const res:any = await axios.post(`https://crud-stack-server-side.vercel.app/login?queryP=${queryP}`, {  emailAddress:email.toLocaleLowerCase(),
       password}, {
         withCredentials:true,
         // credentials:'include'

@@ -12,7 +12,7 @@ function App() {
 
   const getLoggedIn = async() => {
     try {
-      const res:any = await fetch(`http://localhost:8088/login?queryP=test`, {
+      const res:any = await fetch(`https://crud-stack-server-side.vercel.app/login?queryP=test`, {
         method:"post",
         body:JSON.stringify({
           emailAddress:"kelvin",
@@ -31,7 +31,7 @@ function App() {
 
   useLayoutEffect(() => {
     // getLoggedIn();
-    Cookies.set("initialized", "dsdkshbiou78383738v7ge88g")
+    // Cookies.set("initialized", "dsdkshbiou78383738v7ge88g")
   },[])
 
   return (
