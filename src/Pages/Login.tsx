@@ -94,7 +94,7 @@ const Login = () => {
       const res:any = await axios.post(`http://localhost:8088/login?queryP=${queryP}`, {  emailAddress:email.toLocaleLowerCase(),
       password}, {
         withCredentials:true,
-        credentials:'include'
+        // credentials:'include'
       })
       const {data} = await res;
       if (data.success !== true) {
