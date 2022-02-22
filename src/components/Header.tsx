@@ -83,7 +83,7 @@ const Header = ({ currentPage }: Incoming) => {
     }
     try {
       const res = await fetch(
-        `http://localhost:8088/logout`,
+        `https://crud-stack-server-side.vercel.app/logout`,
         {
           credentials: "include",
         }
