@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 import './App.scss';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Homepage from './Pages/Homepage';
@@ -6,6 +6,7 @@ import Update from './Pages/Update';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import ChangePassword from './Pages/ChangePassword';
+import Cookie from "js-cookie";
 
 function App() {
 
@@ -28,8 +29,9 @@ function App() {
     }
   }
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     // getLoggedIn();
+    Cookie.set("initialized", "dsdkshbiou78383738v7ge88g")
   },[])
 
   return (
