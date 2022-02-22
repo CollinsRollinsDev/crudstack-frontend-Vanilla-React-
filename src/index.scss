@@ -1,0 +1,48 @@
+:root {
+  --background: #ececec;
+  --foreground: #121212;
+  --primaryBgColor: #4e00ad;
+  --dark_primaryBgColor: #3b0280;
+  --primaryTextColor: whitesmoke;
+  --secondaryTextColor: white;
+  --primaryContainerBgColor: #3b0280;
+  --primaryContainerTextColor: white;
+  --reverseTextColor: orange;
+  --formBtnBgColor: grey;
+}
+/* darkmode */
+[data-theme="dark"] {
+  --background: #121212;
+  --foreground: white;
+  --primaryBgColor: #121212;
+  --primaryContainerBgColor: orange;
+  --primaryContainerTextColor: white;
+  --primaryTextColor: white;
+  --secondaryTextColor: orange;
+  --reverseTextColor: whitesmoke;
+  --formBtnBgColor: grey;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Lobster&display=swap");
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

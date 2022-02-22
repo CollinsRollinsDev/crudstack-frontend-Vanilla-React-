@@ -1,35 +1,25 @@
 import React from 'react';
-import './App.css';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import './App.scss';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import Homepage from './Pages/Homepage';
+import Update from './Pages/Update';
+import Login from './Pages/Login';
+import Register from './Pages/Register';
+import ChangePassword from './Pages/ChangePassword';
 
 function App() {
-  try {
-    const test = async() => {
-     const res = await fetch(`https://crud-stack-server-side.vercel.app/login?queryP=test`, {
-      method:"post",
-      body:JSON.stringify({
-        emailAddress:'kelvin',
-        password:'pass'
-      }),
-      headers:{
-        "Content-Type":"application/json"
-      },
-      credentials:'include'
-    })
-    const data = await res.json()
-    console.log(data)
-    }
-    test()
-   } catch (error) {
-     console.log(error)
-   }
   return (
-    <Router>
-      <div>Hello World</div>
+    <>
+    <BrowserRouter>
       <Routes>
-        <Route path='/' />
+        <Route path='/' element={<Homepage />} />
+        <Route path='/update' element={<Update />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/changepassword' element={<ChangePassword />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
+    </>
     // <div className="App">
     //   <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />
