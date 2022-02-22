@@ -194,7 +194,7 @@ const Header = ({ currentPage }: Incoming) => {
     <section className="header-container">
       <div className="left">
         <div className="toggle">
-
+          {lightIcon}
         </div>{" "}
         <h3>AuthPlay From Collins Rollins</h3>
       </div>
