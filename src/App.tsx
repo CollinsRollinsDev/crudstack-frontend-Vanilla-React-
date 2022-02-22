@@ -25,13 +25,14 @@ function App() {
       })
       console.log("done")
     } catch (error) {
-      console.log(EvalError)
+      console.log(error)
     }
   }
 
   useLayoutEffect(() => {
     // getLoggedIn();
     // Cookies.set("initialized", "dsdkshbiou78383738v7ge88g")
+
   },[])
 
   return (
