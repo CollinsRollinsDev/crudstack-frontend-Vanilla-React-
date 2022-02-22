@@ -11,7 +11,7 @@ import Alert from "@mui/material/Alert";
 import IconButton from "@mui/material/IconButton";
 import Collapse from "@mui/material/Collapse";
 import CloseIcon from "@mui/icons-material/Close";
-// import axios from 'axios'
+import axios from 'axios'
 
 const Login = () => {
   // const router = useRouter();
@@ -79,18 +79,24 @@ const Login = () => {
 
     try {
       setBtn("please wait....");
-     const res = await fetch(`http://localhost:8088/login?queryP=${queryP}`, {
-       method:"post",
-       body:JSON.stringify({
-         emailAddress:email.toLocaleLowerCase(),
-         password
-       }),
-       headers:{
-         "Content-Type":"application/json"
-       },
-       credentials:'include'
-     })
-      const data = await res.json();
+    //  const res = await fetch(`http://localhost:8088/login?queryP=${queryP}`, {
+    //    method:"post",
+    //    body:JSON.stringify({
+    //      emailAddress:email.toLocaleLowerCase(),
+    //      password
+    //    }),
+    //    headers:{
+    //      "Content-Type":"application/json"
+    //    },
+    //    credentials:'include'
+    //  })
+      // const data = await res.json();
+      const res:any = await axios.post(`http://localhost:8088/login?queryP=${queryP}`, {  emailAddress:email.toLocaleLowerCase(),
+      password}, {
+        withCredentials:true,
+        credentials:'include'
+      })
+      const {data} = await res;
       if (data.success !== true) {
         setAlertMsg(data.message);
         setSeverity("error");
@@ -103,7 +109,7 @@ const Login = () => {
       setSeverity("success");
       setBtn("Success!");
       setOpen(true);
-     window.setTimeout(() => {
+     setTimeout(() => {
       navigate("/")
       }, 2000);
       return;
