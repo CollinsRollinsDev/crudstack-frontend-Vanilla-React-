@@ -2,7 +2,7 @@ import React, { useState, useLayoutEffect } from "react";
 import "./Header.scss";
 // import { useTheme } from "next-themes";
 import {Link, useNavigate, useLocation} from "react-router-dom";
-import Cookie from "js-cookie";
+import Cookies from "js-cookie";
 // import jwt from "jsonwebtoken";
 import jwt from 'jwt-decode'
 // import { useRouter } from "next/router";
@@ -23,7 +23,7 @@ const Header = ({ currentPage }: Incoming) => {
     ;
     console.log("decoding...")
     // let user_data:any;
-    let cookie: any = Cookie.get("authPlay");
+    let cookie: any = Cookies.get("authPlay");
       let user_data: any = await jwt(cookie);
     console.log(cookie, "as cookie")
     // console.log(user_data, "as cookie")

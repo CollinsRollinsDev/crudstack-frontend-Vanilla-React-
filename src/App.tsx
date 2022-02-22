@@ -6,7 +6,7 @@ import Update from './Pages/Update';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import ChangePassword from './Pages/ChangePassword';
-import Cookie from "js-cookie";
+import Cookies from "js-cookie";
 
 function App() {
 
@@ -31,7 +31,7 @@ function App() {
 
   useLayoutEffect(() => {
     // getLoggedIn();
-    Cookie.set("initialized", "dsdkshbiou78383738v7ge88g")
+    Cookies.set("initialized", "dsdkshbiou78383738v7ge88g")
   },[])
 
   return (
