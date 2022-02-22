@@ -90,7 +90,7 @@ const Register = () => {
     try {
       setBtn("Registering...");
       const res = await fetch(
-        `https://crud-stack-server-side.vercel.app/signup`,
+        `http://localhost:8088/signup`,
         {
           method: "POST",
           body: JSON.stringify({

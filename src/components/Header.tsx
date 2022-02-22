@@ -34,7 +34,7 @@ const Header = ({ currentPage }: Incoming) => {
   };
 
   useLayoutEffect(() => {
-    // cookieDecode();
+    cookieDecode();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -83,7 +83,7 @@ const Header = ({ currentPage }: Incoming) => {
     }
     try {
       const res = await fetch(
-        `https://crud-stack-server-side.vercel.app/logout`,
+        `http://localhost:8088/logout`,
         {
           credentials: "include",
         }
