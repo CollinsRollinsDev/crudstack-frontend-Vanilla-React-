@@ -22,7 +22,7 @@ const Header = ({ currentPage }: Incoming) => {
   const cookieDecode: () => void = async () => {
     ;
     // let user_data:any;
-    let cookie: any = Cookie.get("authplay_auth");
+    let cookie: any = Cookie.get("authPlay");
       let user_data: any = await jwt(cookie);
     console.log(cookie, "as cookie")
     // console.log(user_data, "as cookie")

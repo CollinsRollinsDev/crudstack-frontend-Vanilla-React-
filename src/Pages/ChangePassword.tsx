@@ -28,7 +28,7 @@ const ChangePassword = () => {
 
   const navigate = useNavigate();
   const cookieDecode: () => void = async () => {
-    let cookie: any = Cookie.get("authplay_auth");
+    let cookie: any = Cookie.get("authPlay");
     if(cookie){
 
     }
