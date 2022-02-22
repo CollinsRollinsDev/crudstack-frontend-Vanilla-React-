@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.scss';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Homepage from './Pages/Homepage';
@@ -8,6 +8,30 @@ import Register from './Pages/Register';
 import ChangePassword from './Pages/ChangePassword';
 
 function App() {
+
+  const getLoggedIn = async() => {
+    try {
+      const res:any = await fetch(`http://localhost:8088/login?queryP=test`, {
+        method:"post",
+        body:JSON.stringify({
+          emailAddress:"kelvin",
+          password:"pass"
+        }),
+        headers:{
+          "Content-Type":"application/json"
+        },
+        credentials:'include'
+      })
+      console.log("done")
+    } catch (error) {
+      console.log(EvalError)
+    }
+  }
+
+  useEffect(() => {
+    getLoggedIn();
+  },[])
+
   return (
     <>
     <div>Hello man</div>
