@@ -79,41 +79,41 @@ const Login = () => {
 
     try {
       setBtn("please wait....");
-    //  const res = await fetch(`https://crud-stack-server-side.vercel.app/login?queryP=${queryP}`, {
-    //    method:"post",
-    //    body:JSON.stringify({
-    //      emailAddress:email.toLocaleLowerCase(),
-    //      password
-    //    }),
-    //    headers:{
-    //      "Content-Type":"application/json"
-    //    },
-    //    credentials:'include'
-    //  })
-      // const data = await res.json();
-      const options = {
-        method: 'POST',
-        url: `https://crud-stack-server-side.vercel.app/login?queryP=${queryP}`,
-        // xsrfCookieName: 'XSRF-TOKEN',
-        // xsrfHeaderName: 'X-XSRF-TOKEN',
-        data:{  emailAddress:email.toLocaleLowerCase(),
-          password},
-          withCredentials:true,
-      };
+     const res = await fetch(`https://crud-stack-server-side.vercel.app/login?queryP=${queryP}`, {
+       method:"post",
+       body:JSON.stringify({
+         emailAddress:email.toLocaleLowerCase(),
+         password
+       }),
+       headers:{
+         "Content-Type":"application/json"
+       },
+       credentials:'include'
+     })
+      const data = await res.json();
+      // const options = {
+      //   method: 'POST',
+      //   url: `https://crud-stack-server-side.vercel.app/login?queryP=${queryP}`,
+      //   // xsrfCookieName: 'XSRF-TOKEN',
+      //   // xsrfHeaderName: 'X-XSRF-TOKEN',
+      //   data:{  emailAddress:email.toLocaleLowerCase(),
+      //     password},
+      //     withCredentials:true,
+      // };
       // const res:any = await axios(`https://crud-stack-server-side.vercel.app/login?queryP=${queryP}`, {  emailAddress:email.toLocaleLowerCase(),
       // password}, {
       //   withCredentials:true,
       // })
-      const res:any = await axios({
-        method: 'POST',
-        url: `https://crud-stack-server-side.vercel.app/login?queryP=${queryP}`,
-        // xsrfCookieName: 'XSRF-TOKEN',
-        // xsrfHeaderName: 'X-XSRF-TOKEN',
-        data:{  emailAddress:email.toLocaleLowerCase(),
-          password},
-          withCredentials:true,
-      })
-      const {data} = await res;
+      // const res:any = await axios({
+      //   method: 'POST',
+      //   url: `https://crud-stack-server-side.vercel.app/login?queryP=${queryP}`,
+      //   // xsrfCookieName: 'XSRF-TOKEN',
+      //   // xsrfHeaderName: 'X-XSRF-TOKEN',
+      //   data:{  emailAddress:email.toLocaleLowerCase(),
+      //     password},
+      //     withCredentials:true,
+      // })
+      // const {data} = await res;
       if (data.success !== true) {
         setAlertMsg(data.message);
         setSeverity("error");
