@@ -79,7 +79,7 @@ const Login = () => {
 
     try {
       setBtn("please wait....");
-     const res = await fetch(`https://crud-stack-server-side.vercel.app/login?queryP=${queryP}`, {
+    /* const res = await fetch(`https://crud-stack-server-side.vercel.app/login?queryP=${queryP}`, {
        method:"post",
        body:JSON.stringify({
          emailAddress:email.toLocaleLowerCase(),
@@ -90,7 +90,7 @@ const Login = () => {
        },
        credentials:'include'
      })
-      const data = await res.json();
+      const data = await res.json(); */
       // const options = {
       //   method: 'POST',
       //   url: `https://crud-stack-server-side.vercel.app/login?queryP=${queryP}`,
@@ -100,10 +100,8 @@ const Login = () => {
       //     password},
       //     withCredentials:true,
       // };
-      // const res:any = await axios(`https://crud-stack-server-side.vercel.app/login?queryP=${queryP}`, {  emailAddress:email.toLocaleLowerCase(),
-      // password}, {
-      //   withCredentials:true,
-      // })
+       const res:any = await axios.post(`https://crud-stack-server-side.vercel.app/login?queryP=${queryP}`, {  emailAddress:email.toLocaleLowerCase(),
+       password})
       // const res:any = await axios({
       //   method: 'POST',
       //   url: `https://crud-stack-server-side.vercel.app/login?queryP=${queryP}`,
@@ -113,7 +111,7 @@ const Login = () => {
       //     password},
       //     withCredentials:true,
       // })
-      // const {data} = await res;
+      const {data} = await res;
       if (data.success !== true) {
         setAlertMsg(data.message);
         setSeverity("error");
